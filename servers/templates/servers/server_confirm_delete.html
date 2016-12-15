@@ -1,0 +1,16 @@
+
+{% extends "servers/header.html" %}
+
+
+{% block content %}
+
+<form method="post">
+{% csrf_token %}
+
+<h2>Are you sure you want to delete '{{ object }}' ?</h2>
+
+<br>
+<br>
+<input class="btn btn-danger" type = "submit" value = "submit">
+</form>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "servers/header.html" %}
+
+
+
+
+ {% block content %}
+<h1>Servers</h1>
+	<br>
+	<br>
+
+
+
+	<br>
+	<br>
+
+	<table class="table">
+		<thead>
+			<tr>
+			<th class = "pull-left">ID</th>
+			<th>NAME</th>
+			<th>IP</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for server in object_list %}
+			<tr>
+				<td>{{ server.id }}</td>
+				<td>{{ server.name }}</td>
+				<td>{{ server.ip }}</td>
+				<td>
+				<a href="/servers/edit/{{server.id}}" role = "button" class="btn btn-default">Edit</a>
+				<a href="/servers/delete/{{server.id}}" role = "button" class="btn btn-warning">Delete</a>
+				</td>
+				
+			</tr>
+			{% endfor %}
+			
+		</tbody>
+
+	</table>
+
+	<br>
+	<br>
+	<br>
+
+<a href="/servers/new" role = "button" class="btn btn-primary ">New</a>
+
+{% endblock %}
